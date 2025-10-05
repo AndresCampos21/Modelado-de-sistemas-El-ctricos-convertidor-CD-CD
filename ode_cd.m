@@ -1,4 +1,5 @@
-[t,x]=ode45(@din_cd,[0 0.01],[0 0]);
+opts = odeset('MaxStep', 1e-7);
+[t,x]=ode45(@din_cd,[0 0.01],[0 0],opts);
 
 figure(1);
 subplot(2,1,1)
@@ -11,4 +12,5 @@ subplot(2,1,2)
 plot(t, x(:,2), 'b', 'LineWidth', 1);
 xlabel('tiempo');
 ylabel('Voltaje');
+
 grid on
